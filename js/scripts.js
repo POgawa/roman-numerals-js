@@ -13,7 +13,24 @@ do {
     numerals+=("DM")
     input_number -= 400
     numberString = input_number.toString()
-  } else
+  } else if (numberString.charAt(numberString.length-2) === "9") {
+    numerals+=("XC")
+    input_number -= 90
+    numberString = input_number.toString()
+  }else if (numberString.charAt(numberString.length-2) === "4") {
+    numerals+=("XL")
+    input_number -= 40
+    numberString = input_number.toString()
+  }else if (numberString.charAt(numberString.length-1) === "9") {
+    numerals+=("IX")
+    input_number -= 9
+    numberString = input_number.toString()
+  }else if (numberString.charAt(numberString.length-1) === "4") {
+    numerals+=("IV")
+    input_number -= 4
+    numberString = input_number.toString()
+  }
+    else
             do {if (input_number % 1000 === 0) {
                   reverseNumerals+=("M");
                   input_number -= 1000;
@@ -42,6 +59,9 @@ do {
   }
   while (input_number>0);
 
-
-return numerals + (reverseNumerals.split("").reverse().join(""));
+  if (number < 1000  ) {
+    return numerals + (reverseNumerals.split("").reverse().join(""));
+  } else {
+    return (reverseNumerals.split("").reverse().join("")) + numerals;
+  }
 };

@@ -6,7 +6,11 @@ describe("romanNumerals", function() {
     expect(romanNumerals(3)).to.equal("III")
     expect(romanNumerals(10)).to.equal("X")
     expect(romanNumerals(937)).to.equal("CMXXXVII")
-    expect(romanNumerals(1238)).to.equal("XLIX")
+    expect(romanNumerals(1238)).to.equal("MCCXXXVIII")
+    expect(romanNumerals(49)).to.equal("XLIX")
+    // expect(romanNumerals(3090)).to.equal("MMMCMXCIX")
+    expect(romanNumerals(3999)).to.equal("MMMCMXCIX")
+
   })
 
 
